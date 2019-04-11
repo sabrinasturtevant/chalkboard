@@ -27,8 +27,16 @@ class ViewController: UIViewController {
         let placeholderText = userTextField.text ?? "none"
         var placeholderNumber = stepperOutlet.value ?? 0
         
-        let answer = Double(userTextField.text ?? "")
-        writeButtonOutlet.text = Double(String(userTextField)) * Double(placeholderNumber)
+        if stepperOutlet.value > 0.0 && userTextField.text != "" {
+        for _ in 1...Int(stepperOutlet.value) {
+            writeButtonOutlet.text! += String(userTextField.text!) + "\n"
+            }
+        }
+        
+        
+        
+        //let answer = Double(userTextField.text ?? "")
+        //writeButtonOutlet.text = Double(String(userTextField)) * Double(placeholderNumber)
         
         //writeButtonOutlet.text = Double(userTextField.text)
         //writeButtonOutlet.text = Int(placeholderText) * Int(stepperOutlet.value)
